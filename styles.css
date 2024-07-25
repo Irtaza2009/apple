@@ -72,6 +72,19 @@ nav {
   color: #fff;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+  transition: transform 1s ease, margin 1s ease, border-radius 1s ease,
+    box-shadow 1s ease;
+}
+
+.hero-section.zoomed-in {
+  transform: scale(1.5);
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero-content {
@@ -79,6 +92,10 @@ nav {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1.5s ease forwards 0.5s;
+}
+
+.hero-content.hidden {
+  display: none;
 }
 
 @keyframes fadeInUp {
@@ -121,13 +138,11 @@ nav {
   padding: 60px 20px;
   text-align: center;
   position: relative;
-  transform: scale(0.85);
   opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1s ease;
 }
 
 .about-section.visible {
-  transform: scale(1);
   opacity: 1;
 }
 
@@ -147,13 +162,11 @@ nav {
   padding: 60px 20px;
   text-align: center;
   position: relative;
-  transform: scale(0.85);
   opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1s ease;
 }
 
 .projects-section.visible {
-  transform: scale(1);
   opacity: 1;
 }
 
@@ -168,13 +181,11 @@ nav {
   background-color: #fff;
   text-align: center;
   position: relative;
-  transform: scale(0.85);
   opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1s ease;
 }
 
 .contact-section.visible {
-  transform: scale(1);
   opacity: 1;
 }
 
@@ -225,13 +236,11 @@ footer {
   background-color: #f5f5f7;
   color: #1d1d1f;
   border-top: 1px solid #e0e0e0;
-  transform: scale(0.85);
   opacity: 0;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: opacity 1s ease;
 }
 
 footer.visible {
-  transform: scale(1);
   opacity: 1;
 }
 
