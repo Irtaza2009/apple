@@ -201,3 +201,21 @@ footer {
   width: 100%;
   transform: scale(2.2);
 }
+
+.zoom3 {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  width: 100%;
+  transform: scale(2.2);
+}
+
+.zoom,
+.zoom2,
+.zoom3 {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  width: 100%;
+  transition: transform 0.5s ease; /* Ensure smooth scaling transition */
+}
