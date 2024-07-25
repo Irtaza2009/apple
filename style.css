@@ -60,7 +60,7 @@ nav {
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #fff;
+  color: gray;
 }
 
 .hero-content {
@@ -192,4 +192,12 @@ footer {
 
 .wrap {
   height: 200vh;
+}
+
+.zoom2 {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  width: 100%;
+  transform: scale(2.2);
 }
