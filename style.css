@@ -13,9 +13,9 @@ body {
 }
 
 header {
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -130,19 +130,22 @@ nav {
 }
 
 .project-card {
-  background-color: #fff;
-  padding: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #ccc;
+  color: var(--text-color);
+  padding: 2vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  max-width: 800px;
   margin: 0 auto;
   height: 80vh; /* Almost full screen height */
+  width: 70vw;
+  max-width: 70vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 0;
+  top: 10px; /* Stick 10px from the top */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .contact-section {
@@ -207,4 +210,26 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.bottom {
+  height: 100vh;
+}
+
+.top {
+  height: 80vh;
+}
+
+.wrap {
+  height: 200vh;
+}
+
+.zoom,
+.zoom2,
+.zoom3 {
+  position: sticky;
+  top: 20vh;
+  will-change: transform;
+  width: 100%;
+  transition: transform 0.5s ease; /* Ensure smooth scaling transition */
 }

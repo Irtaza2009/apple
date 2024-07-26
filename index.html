@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- AOS Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <header>
@@ -35,7 +37,7 @@
     <section class="top"></section>
     <section class="wrap">
       <div class="zoom2">
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" data-aos="zoom-out">
           <h2>About Me</h2>
           <div class="about-box">
             <p>
@@ -77,15 +79,15 @@
 
     <section id="projects" class="projects-section">
       <h2>My Projects</h2>
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up" data-aos-mirror="false">
         <h3>Project 1</h3>
         <p>Project description goes here.</p>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up" data-aos-mirror="false">
         <h3>Project 2</h3>
         <p>Project description goes here.</p>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up" data-aos-mirror="false">
         <h3>Project 3</h3>
         <p>Project description goes here.</p>
       </div>
@@ -109,6 +111,8 @@
 
     <footer>&copy; 2024 My Portfolio</footer>
 
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
