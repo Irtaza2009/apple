@@ -65,21 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", handleScroll);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const projectCards = document.querySelectorAll(".project-card");
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".project-card");
+  const options = {
+    root: null,
+    threshold: 0.5,
+    rootMargin: "-10% 0px", // Adjust as needed
+  };
 
-  function handleScroll() {
-    const scrollTop = document.documentElement.scrollTop;
-    projectCards.forEach((card, index) => {
-      const start = index * window.innerHeight;
-      const end = start + window.innerHeight;
-      if (scrollTop >= start && scrollTop < end) {
-        card.classList.add("sticky");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("sticky");
       } else {
-        card.classList.remove("sticky");
+        entry.target.classList.remove("sticky");
       }
     });
-  }
+  }, options);
 
-  window.addEventListener("scroll", handleScroll);
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
 });
