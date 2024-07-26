@@ -1,21 +1,40 @@
+/* style.css */
+
+:root {
+  --bg-color: #2e2e2e;
+  --text-color: #d3d3d3;
+  --header-bg-color: rgba(0, 0, 0, 0.1);
+  --nav-link-color: #afb6c0;
+  --nav-link-hover-color: #0071e3;
+  --hero-bg-image: url("hero-bg.jpg");
+  --about-bg-color: #333333;
+  --project-bg-color: #3b3b3b;
+  --contact-bg-color: #444444;
+  --overlay-bg-color: rgba(0, 0, 0, 0.7);
+  --button-bg-color: #0071e3;
+  --button-hover-bg-color: #005bb5;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-  background-color: #676a6f;
-  color: #afb6c0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-header {
-  background-color: rgba(0, 0, 0, 0);
-  padding: 20px;
+html {
+  scroll-behavior: smooth;
+}
 
+header {
+  background-color: var(--header-bg-color);
+  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -30,6 +49,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .nav-links {
@@ -40,12 +60,12 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #1d1d1f;
+  color: var(--nav-link-color);
   transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #0071e3;
+  color: var(--nav-link-hover-color);
 }
 
 .hero-section {
@@ -53,11 +73,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("hero-bg.jpg");
+  background-image: var(--hero-bg-image);
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: gray;
+  color: var(--text-color);
 }
 
 .hero-content {
@@ -77,20 +97,21 @@ nav {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0071e3;
-  color: #fff;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #005bb5;
+  background-color: var(--button-hover-bg-color);
 }
 
 .about-section {
   padding: 60px 20px;
   text-align: center;
+  background-color: var(--about-bg-color);
 }
 
 .about-section h2 {
@@ -122,6 +143,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 40vh; /* Ensure enough gap between the cards */
+  background-color: var(--project-bg-color);
 }
 
 .projects-section h2 {
@@ -130,7 +152,7 @@ nav {
 }
 
 .project-card {
-  background: #ccc;
+  background: var(--project-bg-color);
   color: var(--text-color);
   padding: 2vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -144,14 +166,31 @@ nav {
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 10px; /* Stick 10px from the top */
+  top: 8vh; /* Stick 10px from the top */
   z-index: 1000; /* Ensure it stays above other content */
 }
 
 .contact-section {
+  justify-content: center;
+  align-items: center;
   padding: 60px 20px;
-  background-color: #fff;
+  background-color: var(--contact-bg-color);
   text-align: center;
+  width: 70vw;
+  height: 70vh;
+  color: var(--text-color);
+}
+
+#contact {
+  background-color: var(--contact-bg-color);
+  color: var(--text-color);
+  padding: 2vw;
+  border-radius: 1vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 70vw;
+  margin: 2vh auto 20vh auto;
+  text-align: left;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .contact-section h2 {
@@ -169,6 +208,7 @@ form {
 
 form label {
   text-align: left;
+  color: var(--text-color);
 }
 
 form input,
@@ -177,12 +217,14 @@ form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 form button {
   padding: 10px 20px;
-  background-color: #0071e3;
-  color: #fff;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -190,14 +232,14 @@ form button {
 }
 
 form button:hover {
-  background-color: #005bb5;
+  background-color: var(--button-hover-bg-color);
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0;
-  color: #666;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin-top: 40px;
 }
 
