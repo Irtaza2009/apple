@@ -19,14 +19,132 @@
       </nav>
     </header>
 
-    <section id="home" class="card">Home Section</section>
-    <section id="about" class="card">About Section</section>
-    <section id="projects" class="card">Projects Section</section>
-    <section id="contact" class="card">Contact Section</section>
+    <section class="wrap">
+      <div class="zoom">
+        <section id="home" class="hero-section">
+          <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my work and projects.</p>
+            <a href="#about" class="btn">Learn More</a>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="bottom"></section>
+
+    <!--
+     The zoom animation
+
+    <section class="top"></section>
+    <section class="wrap">
+      <img
+        class="zoom"
+        src="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F5b8fd21c9bd74e9cb07b8a44c1e93649"
+      />
+    </section>
+    <section class="bottom"></section>
+    
+    -->
+
+    <section class="top"></section>
+    <section class="wrap">
+      <div class="zoom2">
+        <section id="about" class="about-section">
+          <h2>About Me</h2>
+          <div class="about-box">
+            <p>
+              Hello! My name is Irtaza, and I am a Full-Stack Web Developer and
+              Hobbyist Game Developer based in Islamabad, Pakistan. I am
+              passionate about creating innovative solutions and immersive
+              experiences. I enjoy reading books, writing articles, editing
+              videos, and playing table tennis. I have a keen interest in
+              technology and love discussing computers and technology. Welcome
+              to my portfolio!
+            </p>
+            <h3>Skills, Methodologies, and Tools</h3>
+            <ul>
+              <li>
+                <b>Programming/Scripting Languages:</b> C#, C++, Python, HTML,
+                CSS, JavaScript, Lua
+              </li>
+              <li><b>Web Development Frameworks:</b> React</li>
+              <li><b>Frontend:</b> HTML, CSS, JavaScript, React, Bootstrap</li>
+              <li><b>Backend:</b> Node.js, Express.js</li>
+              <li><b>DataBase:</b> MongoDB</li>
+              <li>
+                <b>Game Development:</b> Unity, Unreal Engine, Love 2D,
+                Phaser.js
+              </li>
+              <li><b>Project Management:</b> Trello</li>
+              <li><b>Source Code Management:</b> Git, GitHub</li>
+              <li><b>Communitcation:</b> Slack, Zoom</li>
+              <li>
+                <b>Video Editing:</b> Adobe Premiere Pro, Adobe After Effects
+              </li>
+            </ul>
+          </div>
+          <p></p>
+        </section>
+      </div>
+    </section>
+    <section class="bottom"></section>
+
+    <section id="projects" class="projects-section">
+      <h2>My Projects</h2>
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Description of Project 1</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Description of Project 2</p>
+      </div>
+      <div class="project-card">
+        <h3>Project 3</h3>
+        <p>Description of Project 3</p>
+      </div>
+      <!-- Add more project cards as needed -->
+    </section>
+
+    <section class="wrap">
+      <div class="zoom3">
+        <section id="projects" class="projects-section">
+          <h2>My Projects</h2>
+          <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Description of Project 1</p>
+          </div>
+          <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Description of Project 2</p>
+          </div>
+          <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Description of Project 3</p>
+          </div>
+          <!-- Add more project cards as needed -->
+        </section>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
 
     <footer>&copy; 2024 My Portfolio</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>
