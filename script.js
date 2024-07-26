@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const zoomElements = document.querySelectorAll(".zoom, .zoom2, .zoom3");
+  /*
+
+    // Zoom effect
+
+    const zoomElements = document.querySelectorAll(".zoom, .zoom2, .zoom3");
   const zoomFactor = 2.2;
   const vh = window.innerHeight / 100;
 
@@ -21,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", handleScroll);
 
+  */
+
   // Initialize AOS
+
   AOS.init({
-    duration: 500, // Animation duration in milliseconds
+    duration: 1500, // Animation duration in milliseconds
     mirror: true, // whether elements should animate out while scrolling past them
   });
 
@@ -31,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const options = {
     root: null,
     threshold: 0.5,
-    rootMargin: "10px 0px -90% 0px", // Adjust as needed to stick 10px from top
+    rootMargin: "10px 0px -90% 0px", // Stick 10px from top
   };
 
   const observer = new IntersectionObserver((entries) => {
