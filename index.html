@@ -78,8 +78,8 @@
     <section class="bottom"></section>
     -->
 
-    <section id="about" class="about-section">
-      <div class="about-box" data-aos="zoom-in">
+    <section id="about" class="about-section" data-aos="flip-down">
+      <div class="about-box" data-aos="zoom-out" data-aos-delay="500">
         <h2>About Me</h2>
         <p>
           Hello! My name is Irtaza, and I am a Full-Stack Web Developer and
@@ -117,7 +117,7 @@
         class="project-card"
         data-aos="fade-up"
         data-aos-mirror="false"
-        data-aos-offset="-50"
+        data-aos-offset="-0"
       >
         <h3>Project 1</h3>
         <p>Project description goes here.</p>
@@ -141,20 +141,15 @@
         <h3>Project 2</h3>
         <p>Project description goes here.</p>
       </div>
-      <div
-        class="project-card"
-        data-aos="fade-up"
-        data-aos-mirror="false"
-        data-aos-delay="0"
-      >
+      <div class="project-card" data-aos="fade-up" data-aos-mirror="false">
         <h3>Project 3</h3>
         <p>Project description goes here.</p>
       </div>
     </section>
 
-    <section id="contact" class="contact-section" data-aos="zoom-in">
-      <h2>Contact Me</h2>
-      <div id="contact">
+    <section id="contact" class="contact-section" data-aos="zoom-out">
+      <div data-aos="fade-up" data-aos-delay="500">
+        <h2>Contact Me</h2>
         <form action="#" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />

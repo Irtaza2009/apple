@@ -1,16 +1,23 @@
+/* style.css */
+
 :root {
-  --bg-color: #424242;
-  --text-color: #feffea;
-  --header-bg-color: rgba(66, 66, 66, 0.8);
-  --nav-link-color: #feffea;
-  --nav-link-hover-color: #fafcd4;
-  --hero-bg-image: url("hero-bg.jpg");
-  --about-bg-color: #508d4e;
-  --project-bg-color: #424242;
-  --contact-bg-color: #424242;
-  --overlay-bg-color: #a3a3a3;
-  --button-bg-color: #a3a3a3;
-  --button-hover-bg-color: #7f7e7e;
+  --bg-color: #424242; /* Dark background color */
+  --text-color: #feffea; /* Light text color */
+  --header-bg-color: rgb(
+    66,
+    66,
+    66,
+    0
+  ); /* Slightly transparent header background */
+  --nav-link-color: #feffea; /* Navigation link color */
+  --nav-link-hover-color: #fafcd4; /* Navigation link hover color */
+  --hero-bg-image: url("hero-bg.jpg"); /* Assuming this is an existing image */
+  --about-bg-color: #6a6a6a; /* About section background color */
+  --project-bg-color: #424242; /* Projects section background color */
+  --contact-bg-color: #6a6a6a; /* Contact section background color */
+  --overlay-bg-color: #a3a3a3; /* Overlay color */
+  --button-bg-color: #a3a3a3; /* Button background color */
+  --button-hover-bg-color: #7f7e7e; /* Button hover background color */
 }
 
 * {
@@ -151,8 +158,16 @@ nav {
   margin-bottom: 20px;
 }
 
+/*
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+  */
+
 #about {
-  background: var(--bg-color);
+  background: var(--about-bg-color);
   color: var(--text-color);
   padding: 2vw;
   border-radius: 1vw;
@@ -160,7 +175,6 @@ nav {
   max-width: 70vw;
   margin: 2vh auto 20vh auto;
   text-align: left;
-  animation: fadeInUp 1s ease-in-out;
 }
 
 .projects-section {
@@ -196,7 +210,7 @@ nav {
   z-index: 1000; /* Ensure it stays above other content */
 }
 
-.contact-section {
+/*.contact-section {
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
@@ -205,7 +219,8 @@ nav {
   width: 70vw;
   height: 70vh;
   color: var(--text-color);
-}
+  margin-bottom: 20px;
+}*/
 
 #contact {
   background-color: var(--contact-bg-color);
@@ -216,7 +231,6 @@ nav {
   max-width: 70vw;
   margin: 10vh auto 2vh auto;
   text-align: left;
-  animation: fadeInUp 1s ease-in-out;
 }
 
 .contact-section h2 {
@@ -234,13 +248,17 @@ form {
 
 form label {
   text-align: left;
+  color: var(--text-color);
 }
 
 form input,
 form textarea {
+  width: 100%;
   padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 form button {
@@ -257,17 +275,84 @@ form button:hover {
   background-color: var(--button-hover-bg-color);
 }
 
-.footer {
+footer {
+  text-align: center;
+  padding: 20px;
   background-color: var(--bg-color);
   color: var(--text-color);
-  text-align: center;
-  padding: 20px 0;
+  margin-top: 40px;
 }
 
-.sticky {
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bottom {
+  height: 100vh;
+}
+
+.top {
+  height: 80vh;
+}
+
+.wrap {
+  height: 200vh;
+}
+
+.zoom,
+.zoom2,
+.zoom3 {
   position: sticky;
-  top: 8vh; /* Stick 10px from the top */
-  z-index: 1000; /* Ensure it stays above other content */
+  top: 20vh;
+  will-change: transform;
+  width: 100%;
+  transition: transform 0.5s ease; /* Ensure smooth scaling transition */
+}
+
+.a-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 0.5vw;
+  object-position: 100% center;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: var(--overlay-bg-color);
+  color: var(--text-color);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 0.5vw;
+}
+
+.a-container:hover .overlay {
+  opacity: 1;
+}
+
+.hero-image {
+  width: 30vh; /* Adjust the size as needed */
+  height: 30vh; /* Adjust the size as needed */
+  border-radius: 50%; /* Makes the image circular */
+  margin-bottom: 20px; /* Adds some space below the image */
+  object-fit: cover; /* Ensures the image covers the element */
+  border: 3px solid var(--text-color); /* Adds a border to the image */
 }
 
 .back-to-top {
@@ -290,16 +375,4 @@ form button:hover {
 
 .back-to-top:hover {
   background-color: var(--button-hover-bg-color);
-}
-
-/* Add animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
