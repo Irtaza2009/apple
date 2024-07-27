@@ -1,40 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /*
-
-    // Zoom effect
-
-    const zoomElements = document.querySelectorAll(".zoom, .zoom2, .zoom3");
-  const zoomFactor = 2.2;
-  const vh = window.innerHeight / 100;
-
-  function updateZoom(scrollTop) {
-    zoomElements.forEach((element, index) => {
-      const start = (index * 300 + 80) * vh;
-      const stop = (index * 300 + 380) * vh;
-      if (scrollTop > start && scrollTop < stop) {
-        const scale = Math.max(zoomFactor - (scrollTop - start) / 500, 1);
-        element.style.transform = `scale(${scale})`;
-      }
-    });
-  }
-
-  function handleScroll() {
-    const scrollTop = document.documentElement.scrollTop;
-    updateZoom(scrollTop);
-  }
-
-  window.addEventListener("scroll", handleScroll);
-
-  */
-
   // Initialize AOS
-
   AOS.init({
     duration: 1000, // Animation duration in milliseconds
     mirror: true, // whether elements should animate out while scrolling past them
     easing: "ease",
   });
 
+  // Intersection Observer for Sticky Project Cards
   const cards = document.querySelectorAll(".project-card");
   const options = {
     root: null,
@@ -54,5 +26,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach((card) => {
     observer.observe(card);
+  });
+
+  // Back to Top Button
+  const backToTopButton = document.createElement("button");
+  backToTopButton.textContent = "↑";
+  backToTopButton.classList.add("back-to-top");
+  document.body.appendChild(backToTopButton);
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.add("show");
+    } else {
+      backToTopButton.classList.remove("show");
+    }
+  });
+
+  // Lazy Load Images
+  const lazyImages = document.querySelectorAll("img.lazy");
+  const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove("lazy");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  lazyImages.forEach((img) => {
+    lazyLoadObserver.observe(img);
   });
 });
