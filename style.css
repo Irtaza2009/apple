@@ -367,6 +367,9 @@ footer {
   display: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 5vh;
+  height: 5vh;
+  font-size: large;
 }
 
 .back-to-top.show {

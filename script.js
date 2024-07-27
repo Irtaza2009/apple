@@ -6,6 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
     easing: "ease",
   });
 
+  // Contact Form Mailto Link
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const mailtoLink = `mailto:myemail@example.com?subject=Contact from ${name}&body=${encodeURIComponent(
+      message
+    )}%0A%0AEmail: ${email}`;
+    window.location.href = mailtoLink;
+  });
+
   // Intersection Observer for Sticky Project Cards
   const cards = document.querySelectorAll(".project-card");
   const options = {
