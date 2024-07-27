@@ -1,23 +1,16 @@
-/* style.css */
-
 :root {
-  --bg-color: #424242; /* Dark background color */
-  --text-color: #feffea; /* Light text color */
-  --header-bg-color: rgb(
-    66,
-    66,
-    66,
-    0
-  ); /* Slightly transparent header background */
-  --nav-link-color: #feffea; /* Navigation link color */
-  --nav-link-hover-color: #fafcd4; /* Navigation link hover color */
-  --hero-bg-image: url("hero-bg.jpg"); /* Assuming this is an existing image */
-  --about-bg-color: #6a6a6a; /* About section background color */
-  --project-bg-color: #424242; /* Projects section background color */
-  --contact-bg-color: #6a6a6a; /* Contact section background color */
-  --overlay-bg-color: #a3a3a3; /* Overlay color */
-  --button-bg-color: #a3a3a3; /* Button background color */
-  --button-hover-bg-color: #7f7e7e; /* Button hover background color */
+  --bg-color: #424242;
+  --text-color: #feffea;
+  --header-bg-color: rgb(66, 66, 66, 0);
+  --nav-link-color: #feffea;
+  --nav-link-hover-color: #fafcd4;
+  --hero-bg-image: url("hero-bg.jpg");
+  --about-bg-color: #6a6a6a;
+  --project-bg-color: #424242;
+  --contact-bg-color: #6a6a6a;
+  --overlay-bg-color: #a3a3a3;
+  --button-bg-color: #a3a3a3;
+  --button-hover-bg-color: #7f7e7e;
 }
 
 * {
@@ -167,7 +160,11 @@ nav {
   */
 
 #about {
-  background: var(--about-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2vw;
+  background-color: var(--about-bg-color);
   color: var(--text-color);
   padding: 2vw;
   border-radius: 1vw;
@@ -182,7 +179,7 @@ nav {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 0vh; /* Ensure enough gap between the cards */
+  gap: 0vh;
   background-color: var(--project-bg-color);
 }
 
@@ -207,7 +204,7 @@ nav {
   align-items: center;
   position: sticky;
   top: 8vh; /* Stick 10px from the top */
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
 }
 
 /*.contact-section {
@@ -313,7 +310,7 @@ footer {
   top: 20vh;
   will-change: transform;
   width: 100%;
-  transition: transform 0.5s ease; /* Ensure smooth scaling transition */
+  transition: transform 0.5s ease;
 }
 
 .a-container {
@@ -347,12 +344,12 @@ footer {
 }
 
 .hero-image {
-  width: 30vh; /* Adjust the size as needed */
-  height: 30vh; /* Adjust the size as needed */
-  border-radius: 50%; /* Makes the image circular */
-  margin-bottom: 20px; /* Adds some space below the image */
-  object-fit: cover; /* Ensures the image covers the element */
-  border: 3px solid var(--text-color); /* Adds a border to the image */
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 3px solid var(--text-color);
 }
 
 .back-to-top {
@@ -399,4 +396,37 @@ footer {
 
 .resume-item h3 {
   margin-bottom: 10px;
+}
+
+.contact-info-box {
+  max-width: 25vw;
+  background-color: var(--about-bg-color);
+  padding: 2vw;
+  border-radius: 1vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 13vh;
+  margin-right: 3vh;
+}
+
+.contact-info-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.contact-info-box p {
+  margin: 5px 0;
+}
+
+.contact-info-box a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+}
+
+.contact-info-box a:hover {
+  text-decoration: underline;
 }
