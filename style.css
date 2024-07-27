@@ -1,18 +1,23 @@
 /* style.css */
 
 :root {
-  --bg-color: #2e2e2e;
-  --text-color: #d3d3d3;
-  --header-bg-color: rgba(0, 0, 0, 0.1);
-  --nav-link-color: #afb6c0;
-  --nav-link-hover-color: #0071e3;
-  --hero-bg-image: url("hero-bg.jpg");
-  --about-bg-color: #333333;
-  --project-bg-color: #3b3b3b;
-  --contact-bg-color: #444444;
-  --overlay-bg-color: rgba(0, 0, 0, 0.7);
-  --button-bg-color: #0071e3;
-  --button-hover-bg-color: #005bb5;
+  --bg-color: #424242; /* Dark background color */
+  --text-color: #feffea; /* Light text color */
+  --header-bg-color: rgb(
+    66,
+    66,
+    66,
+    0
+  ); /* Slightly transparent header background */
+  --nav-link-color: #feffea; /* Navigation link color */
+  --nav-link-hover-color: #fafcd4; /* Navigation link hover color */
+  --hero-bg-image: url("hero-bg.jpg"); /* Assuming this is an existing image */
+  --about-bg-color: #508d4e; /* About section background color */
+  --project-bg-color: #424242; /* Projects section background color */
+  --contact-bg-color: #424242; /* Contact section background color */
+  --overlay-bg-color: #a3a3a3; /* Overlay color */
+  --button-bg-color: #a3a3a3; /* Button background color */
+  --button-hover-bg-color: #7f7e7e; /* Button hover background color */
 }
 
 * {
@@ -37,7 +42,7 @@ header {
   padding: 10px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 3000;
 }
 
 nav {
@@ -52,6 +57,19 @@ nav {
   color: var(--text-color);
 }
 
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031d44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -64,8 +82,25 @@ nav {
   transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: var(--nav-link-hover-color);
+.nav-link-ltr a:hover {
+  opacity: 1;
+}
+
+.nav-link-ltr::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #031d44;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
 }
 
 .hero-section {
@@ -86,7 +121,6 @@ nav {
 
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
 }
 
 .hero-content p {
@@ -110,7 +144,7 @@ nav {
 
 .about-section {
   padding: 60px 20px;
-  text-align: center;
+  text-align: left;
   background-color: var(--about-bg-color);
 }
 
@@ -119,11 +153,13 @@ nav {
   margin-bottom: 20px;
 }
 
+/*
 .about-section p {
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
 }
+  */
 
 #about {
   background: var(--bg-color);
@@ -188,7 +224,7 @@ nav {
   border-radius: 1vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 70vw;
-  margin: 2vh auto 20vh auto;
+  margin: 10vh auto 2vh auto;
   text-align: left;
   animation: fadeInUp 1s ease-in-out;
 }
@@ -304,4 +340,13 @@ footer {
 
 .a-container:hover .overlay {
   opacity: 1;
+}
+
+.hero-image {
+  width: 30vh; /* Adjust the size as needed */
+  height: 30vh; /* Adjust the size as needed */
+  border-radius: 50%; /* Makes the image circular */
+  margin-bottom: 20px; /* Adds some space below the image */
+  object-fit: cover; /* Ensures the image covers the element */
+  border: 3px solid var(--text-color); /* Adds a border to the image */
 }

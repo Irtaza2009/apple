@@ -13,18 +13,21 @@
       <nav>
         <div class="logo">My Portfolio</div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="nav-link nav-link-ltr">Home</a></li>
+          <li><a href="#about" class="nav-link nav-link-ltr">About</a></li>
+          <li>
+            <a href="#projects" class="nav-link nav-link-ltr">Projects</a>
+          </li>
+          <li><a href="#contact" class="nav-link nav-link-ltr">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <section id="home" class="hero-section">
       <div class="hero-content" data-aos="zoom-out">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Discover my work and projects.</p>
+        <img src="./assets/profile.jpg" alt="Your Picture" class="hero-image" />
+        <h1>Syed Muhammad Irtaza</h1>
+        <p>Web / Game Developer</p>
         <a href="#about" class="btn">Learn More</a>
       </div>
     </section>
@@ -114,7 +117,7 @@
         class="project-card"
         data-aos="fade-up"
         data-aos-mirror="false"
-        data-aos-offset="-200"
+        data-aos-offset="-50"
       >
         <h3>Project 1</h3>
         <p>Project description goes here.</p>
@@ -138,13 +141,18 @@
         <h3>Project 2</h3>
         <p>Project description goes here.</p>
       </div>
-      <div class="project-card" data-aos="fade-up" data-aos-mirror="false">
+      <div
+        class="project-card"
+        data-aos="fade-up"
+        data-aos-mirror="false"
+        data-aos-delay="0"
+      >
         <h3>Project 3</h3>
         <p>Project description goes here.</p>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" data-aos="zoom-in">
       <h2>Contact Me</h2>
       <div id="contact">
         <form action="#" method="POST">

@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize AOS
 
   AOS.init({
-    duration: 1500, // Animation duration in milliseconds
+    duration: 1000, // Animation duration in milliseconds
     mirror: true, // whether elements should animate out while scrolling past them
+    easing: "ease",
   });
 
   const cards = document.querySelectorAll(".project-card");
